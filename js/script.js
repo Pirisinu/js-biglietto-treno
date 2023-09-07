@@ -22,14 +22,14 @@ Vuoi percorre ${clientKm}Km al prezzo di (${kmPrice}€ al km).`
 document.getElementById('title').innerHTML = titleMessage;
 
 //Outgoing text with ticket price
-const clientPrice = clientKm * kmPrice;
+const clientPrice = (clientKm * kmPrice).toFixed(2);
 const clientMessage = `Il prezzo del tuo biglietto è: ${clientPrice}€.`;
 let discountMessage;
 if (age <= 18){
-  discountMessage ='Sei riuscito a ricevere il tuo sconto under18!!<br/>Il tuo attuale prezzo è di:' + (clientPrice - (clientPrice * 20 / 100)) + '€';
+  discountMessage ='Sei riuscito a ricevere il tuo sconto under18!!<br/>Il tuo attuale prezzo è di:' + (clientPrice - (clientPrice * 20 / 100)).toFixed(2) + '€';
 }
 else if (age >= 65){
-  discountMessage ='Sei riuscito a ricevere il tuo sconto over65!!<br/>Il tuo attuale prezzo è di:' + (clientPrice - (clientPrice * 40 / 100)) + '€';
+  discountMessage ='Sei riuscito a ricevere il tuo sconto over65!!<br/>Il tuo attuale prezzo è di:' + (clientPrice - (clientPrice * 40 / 100)).toFixed(2) + '€';
 }
 else{
   discountMessage = 'Mi dispiace ma non sei rientrato in nessun nostro sconto.'
