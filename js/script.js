@@ -21,3 +21,14 @@ Vuoi percorre ${clientKm}Km al prezzo di (${kmPrice}€ al km).`
 
 document.getElementById('title').innerHTML = titleMessage;
 //Outgoing text with ticket price
+const clientPrice = clientKm * kmPrice;
+const clientMessage = `Il prezzo del tuo biglietto è: ${clientPrice}€.`;
+
+if (age < 18){
+
+}
+else if (age >=65){
+
+}
+
+document.getElementById('ticketprice').innerHTML = clientMessage;
