@@ -15,6 +15,9 @@ const age = prompt('Inserisci la tua età')
 const clientKm = prompt('Quanti chilometri vuoi percorrere?')
 
 //Title
-const titleMessage = `Ciao ${name} ${lastName}, benvenuto.<br/>`
+const titleMessage = 
+`Ciao ${name} ${lastName}, benvenuto.<br/>
+Vuoi percorre ${clientKm}Km al prezzo di (${kmPrice}€ al km).`
+
 document.getElementById('title').innerHTML = titleMessage;
 //Outgoing text with ticket price
