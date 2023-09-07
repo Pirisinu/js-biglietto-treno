@@ -20,15 +20,21 @@ const titleMessage =
 Vuoi percorre ${clientKm}Km al prezzo di (${kmPrice}€ al km).`
 
 document.getElementById('title').innerHTML = titleMessage;
+
 //Outgoing text with ticket price
 const clientPrice = clientKm * kmPrice;
 const clientMessage = `Il prezzo del tuo biglietto è: ${clientPrice}€.`;
-
-if (age < 18){
-
+let discountedPriceMessage;
+if (age <= 18){
+  discountedPriceMessage = clientPrice - (clientPrice * 20 / 100);
 }
-else if (age >=65){
-
+else if (age >= 65){
+  discountedPriceMessage = clientPrice - (clientPrice * 40 / 100);
 }
+
+const discountMessage =
+`Hai ricevuto uno sconto!!<br/>
+Il prezzo del tuo biglietto ora è di <strong>${discountedPriceMessage}€</strong>`;
 
 document.getElementById('ticketprice').innerHTML = clientMessage;
+document.getElementById('discountedPrice').innerHTML = discountMessage;
